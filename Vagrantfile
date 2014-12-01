@@ -39,20 +39,20 @@ Vagrant.configure("2") do |config|
       configure(build)
     end
 
-    config.vm.define "consul_server#{i}" do |consul_server|
-      consul_server.vm.hostname = "consul_server"
-      consul_server.vm.network "private_network", :ip => "192.168.242.1#{i}"
-      consul_server.vm.network "private_network", :ip => "10.2.3.1#{i}"
-      consul_server.vm.network "private_network", :ip => "10.3.3.1#{i}"
-      configure(consul_server)
+    config.vm.define "server#{i}" do |server|
+      server.vm.hostname = "server"
+      server.vm.network "private_network", :ip => "192.168.242.1#{i}"
+      server.vm.network "private_network", :ip => "10.2.3.1#{i}"
+      server.vm.network "private_network", :ip => "10.3.3.1#{i}"
+      configure(server)
     end
 
-    config.vm.define "consul_agent#{i}" do |consul_agent|
-      consul_agent.vm.hostname = "consul_agent#{i}"
-      consul_agent.vm.network "private_network", :ip => "192.168.242.2#{i}"
-      consul_agent.vm.network "private_network", :ip => "10.2.3.2#{i}"
-      consul_agent.vm.network "private_network", :ip => "10.3.3.2#{i}"
-      configure(consul_agent)
+    config.vm.define "agent#{i}" do |agent|
+      agent.vm.hostname = "agent#{i}"
+      agent.vm.network "private_network", :ip => "192.168.242.2#{i}"
+      agent.vm.network "private_network", :ip => "10.2.3.2#{i}"
+      agent.vm.network "private_network", :ip => "10.3.3.2#{i}"
+      configure(agent)
     end
 
   end
