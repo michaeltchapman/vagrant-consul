@@ -39,20 +39,20 @@ Vagrant.configure("2") do |config|
       configure(build)
     end
 
-    config.vm.define "control#{i}" do |control|
-      control.vm.hostname = "control"
-      control.vm.network "private_network", :ip => "192.168.242.1#{i}"
-      control.vm.network "private_network", :ip => "10.2.3.1#{i}"
-      control.vm.network "private_network", :ip => "10.3.3.1#{i}"
-      configure(control)
+    config.vm.define "consul_server#{i}" do |consul_server|
+      consul_server.vm.hostname = "consul_server"
+      consul_server.vm.network "private_network", :ip => "192.168.242.1#{i}"
+      consul_server.vm.network "private_network", :ip => "10.2.3.1#{i}"
+      consul_server.vm.network "private_network", :ip => "10.3.3.1#{i}"
+      configure(consul_server)
     end
 
-    config.vm.define "hypervisor#{i}" do |hypervisor|
-      hypervisor.vm.hostname = "hypervisor#{i}"
-      hypervisor.vm.network "private_network", :ip => "192.168.242.2#{i}"
-      hypervisor.vm.network "private_network", :ip => "10.2.3.2#{i}"
-      hypervisor.vm.network "private_network", :ip => "10.3.3.2#{i}"
-      configure(hypervisor)
+    config.vm.define "consul_agent#{i}" do |consul_agent|
+      consul_agent.vm.hostname = "consul_agent#{i}"
+      consul_agent.vm.network "private_network", :ip => "192.168.242.2#{i}"
+      consul_agent.vm.network "private_network", :ip => "10.2.3.2#{i}"
+      consul_agent.vm.network "private_network", :ip => "10.3.3.2#{i}"
+      configure(consul_agent)
     end
 
   end
