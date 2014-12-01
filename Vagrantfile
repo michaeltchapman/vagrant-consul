@@ -16,7 +16,7 @@ def configure(config)
   end
 
   config.vm.provision :shell do |shell|
-    shell.inline = 'bash /vagrant/provision/bootstrap.sh'
+    shell.inline = 'bash /vagrant/scripts/bootstrap.sh'
   end
 
   config.vm.synced_folder "modules", "/etc/puppet/modules"

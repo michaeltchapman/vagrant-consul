@@ -1,6 +1,5 @@
 build_classes:
   - "openstack_extras::repo::redhat::redhat"
-  - partial::mirror
 
 server_classes:
   - consul
