@@ -14,6 +14,12 @@ else
   ref = 'master'
 end
 
+# apache
+if reposource == 'upstream'
+  author = 'puppetlabs'
+end
+mod 'puppetlabs/apache', :git => "#{git_protocol}://github.com/#{author}/puppetlabs-apache.git", :ref => ref
+
 # stdlib
 if reposource == 'upstream'
   author = 'puppetlabs'
@@ -25,6 +31,12 @@ if reposource == 'upstream'
   author = 'solarkennedy'
 end
 mod 'solarkennedy/consul', :git => "#{git_protocol}://github.com/#{author}/puppet-consul.git", :ref => ref
+
+# partial
+if reposource == 'upstream'
+  author = 'michaeltchapman'
+end
+mod 'michaeltchapman/partial', :git => "#{git_protocol}://github.com/#{author}/puppet-partial.git", :ref => ref
 
 # openstack_extras
 if reposource == 'upstream'
