@@ -21,6 +21,10 @@ openstack_extras::repo::redhat::redhat::repo_hash:
     'baseurl':  'http://yum.puppetlabs.com/el/$releasever/products/$basearch/'
     'gpgkey':   'http://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs'
     'gpgcheck': 1
+  'local':
+    'descr': 'Local Mirror'
+    'baseurl': 'http://192.168.242.31/'
+    'gpgcheck': 0
 
 openstack_extras::repo::redhat::redhat::gpgkey_hash:
   '/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7':
@@ -30,3 +34,13 @@ openstack_extras::repo::redhat::redhat::purge_unmanaged: true
 openstack_extras::repo::redhat::redhat::package_require: true
 openstack_extras::repo::redhat::redhat::manage_epel: false
 openstack_extras::repo::redhat::redhat::manage_rdo: false
+
+consul::install_method: package
+consul::init_style: false
+consul::config_dir: '/etc/consul.d'
+consul::bin_dir: '/etc/consul.d'
+consul::config_dir: '/etc/consul.d'
+
+apache::default_mods: false
+apache::default_vhost: false
+apache::default_confd_files: false

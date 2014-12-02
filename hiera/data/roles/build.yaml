@@ -29,3 +29,8 @@ openstack_extras::repo::redhat::redhat::purge_unmanaged: true
 openstack_extras::repo::redhat::redhat::package_require: true
 openstack_extras::repo::redhat::redhat::manage_epel: false
 openstack_extras::repo::redhat::redhat::manage_rdo: true
+
+partial::rpm::rpms:
+  'consul':
+    repo_source: 'https://github.com/michaeltchapman/consul-rpm'
+    build_command: 'rpmdev-setuptree; cp -r consul/* rpmbuild; spectool -g -R rpmbuild/SPECS/consul.spec; rpmbuild -ba rpmbuild/SPECS/consul.spec; cp rpmbuild/RPMS/x86_64/* .'
