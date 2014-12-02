@@ -20,6 +20,12 @@ if reposource == 'upstream'
 end
 mod 'puppetlabs/apache', :git => "#{git_protocol}://github.com/#{author}/puppetlabs-apache.git", :ref => ref
 
+# concat
+if reposource == 'upstream'
+  author = 'puppetlabs'
+end
+mod 'puppetlabs/concat', :git => "#{git_protocol}://github.com/#{author}/puppetlabs-concat.git", :ref => ref
+
 # stdlib
 if reposource == 'upstream'
   author = 'puppetlabs'
@@ -38,6 +44,12 @@ if reposource == 'upstream'
 end
 mod 'michaeltchapman/partial', :git => "#{git_protocol}://github.com/#{author}/puppet-partial.git", :ref => ref
 
+# firewall
+if reposource == 'upstream'
+  author = 'puppetlabs'
+end
+mod 'puppetlabs/firewall', :git => "#{git_protocol}://github.com/#{author}/puppetlabs-firewall.git", :ref => ref
+
 # openstack_extras
 if reposource == 'upstream'
   author = 'aptira'
@@ -49,3 +61,10 @@ if reposource == 'upstream'
   author = 'nanliu'
 end
 mod 'nanliu/staging', :git => "#{git_protocol}://github.com/#{author}/puppet-staging.git", :ref => ref
+
+# vcsrepo
+if reposource == 'upstream'
+  author = 'puppetlabs'
+end
+mod 'puppetlabs/vcsrepo', :git => "#{git_protocol}://github.com/#{author}/puppetlabs-vcsrepo.git", :ref => ref
+
