@@ -1,7 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BOX = 'developervms/centos7-64'
+# Don't use ccs box right now since we'll need to redo some things.
+#BOX = 'ccs-rhel-7_1.0.5.box'
+
+BOX = 'vStone/centos-7.x-puppet.3.x'
 
 def configure(config)
   config.vm.box = BOX
