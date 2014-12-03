@@ -1,8 +1,15 @@
 build_classes:
-  - "openstack_extras::repo::redhat::redhat"
+  - openstack_extras::repo::redhat::redhat
+  - partial
+  - partial::rpm
+  - firewall
 
 server_classes:
+  - openstack_extras::repo::redhat::redhat
   - consul
+  - firewall
 
 agent_classes:
+  - openstack_extras::repo::redhat::redhat
   - consul
+  - firewall
