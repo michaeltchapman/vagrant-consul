@@ -38,6 +38,12 @@ if reposource == 'upstream'
 end
 mod 'solarkennedy/consul', :git => "#{git_protocol}://github.com/#{author}/puppet-consul.git", :ref => ref
 
+# profiles
+if reposource == 'upstream'
+  author = 'michaeltchapman'
+end
+mod 'michaeltchapman/profiles', :git => "#{git_protocol}://github.com/#{author}/puppeels.git", :ref => ref
+
 # partial
 if reposource == 'upstream'
   author = 'michaeltchapman'

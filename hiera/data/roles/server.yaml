@@ -5,3 +5,8 @@ consul::config_hash:
   enable_syslog: true
   log_level: INFO
   node_name: "%{::fqdn}"
+  bootstrap_expect: 3
+  retry_join:
+    - 192.168.242.11
+    - 192.168.242.12
+    - 192.168.242.13

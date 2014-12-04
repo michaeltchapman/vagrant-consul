@@ -14,7 +14,7 @@ def configure(config)
   end
 
   config.vm.provider "virtualbox" do |vconfig|
-    vconfig.customize ["modifyvm", :id, "--memory", "4096"]
+    vconfig.customize ["modifyvm", :id, "--memory", "2048"]
     vconfig.cpus = 2
   end
 
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.define "server#{i}" do |server|
-      server.vm.hostname = "server"
+      server.vm.hostname = "server#{i}"
       server.vm.network "private_network", :ip => "192.168.242.1#{i}"
       server.vm.network "private_network", :ip => "10.2.3.1#{i}"
       server.vm.network "private_network", :ip => "10.3.3.1#{i}"

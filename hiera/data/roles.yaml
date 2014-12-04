@@ -6,7 +6,7 @@ build_classes:
 
 server_classes:
   - openstack_extras::repo::redhat::redhat
-  - consul
+  - profile::application::consul
   - firewall
 
 agent_classes:
