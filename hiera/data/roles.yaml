@@ -11,5 +11,5 @@ server_classes:
 
 agent_classes:
   - openstack_extras::repo::redhat::redhat
-  - consul
+  - profile::application::consul
   - firewall

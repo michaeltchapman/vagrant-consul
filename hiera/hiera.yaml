@@ -7,5 +7,6 @@
   - "user.%{role}"
   - user
   - "roles/%{role}"
+  - "modules/%{calling_module}"
   - roles
   - common
